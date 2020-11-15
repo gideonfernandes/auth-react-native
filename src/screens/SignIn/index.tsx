@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { View, Button, StyleSheet } from 'react-native';
-import AuthContext from '../../contexts/auth';
+import {useAuth} from '../../contexts/auth';
 
 const SignIn: React.FC = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn } = useAuth();
 
   function handleSignIn() {
     signIn();
@@ -11,7 +11,7 @@ const SignIn: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <Button title="Sign In" onPress={handleSignIn}></Button>
+      <Button title="Sign In" onPress={handleSignIn} />
     </View>
   );
 };

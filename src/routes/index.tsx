@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { View, ActivityIndicator, StyleSheet } from 'react-native';
-import AuthContext from '../contexts/auth';
-import AppRoutes from './auth.routes';
+import {useAuth} from '../contexts/auth';
+import AppRoutes from './app.routes';
 import AuthRoutes from './auth.routes';
 
 const Routes: React.FC = () => {
-  const { signed, loading } = useContext(AuthContext);
+  const { signed, loading } = useAuth();
 
   if (loading) {
     return (
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   loadingContainer: {
     flex: 1,
     justifyContent: 'center',
-    alignItens: 'center',
+    alignItems: 'center',
   },
 });
 
